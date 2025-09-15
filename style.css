@@ -32,6 +32,22 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+#hanukkah-text {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+#hanukkah-text:hover {
+    transform: scale(1.05);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 15px #FFD700; */
+}
+
+#hanukkah-text:active {
+    transform: scale(0.95);
+}
+
 .countdown {
     font-size: 4rem;
     font-weight: bold;

@@ -1,3 +1,36 @@
+const hanukkahSpellings = [
+    'Hanukkah',
+    'Chanukah',
+    'Hanukah',
+    'Chanuka',
+    'Hanuka',
+    'Chanukkah',
+    'Hannukah',
+    'Hannukkah',
+    'Channukah',
+    'Channukkah'
+];
+
+let currentSpelling = 'Hanukkah';
+
+function getRandomSpelling() {
+    const availableSpellings = hanukkahSpellings.filter(spelling => spelling !== currentSpelling);
+    const randomIndex = Math.floor(Math.random() * availableSpellings.length);
+    return availableSpellings[randomIndex];
+}
+
+function changeSpelling() {
+    const newSpelling = getRandomSpelling();
+    currentSpelling = newSpelling;
+
+    // Update all instances of the word in the page
+    const title = document.querySelector('h1');
+    title.innerHTML = `🕎 <span id="hanukkah-text">${newSpelling}</span> Countdown 🕎`;
+
+    // Re-attach the click listener to the new element
+    document.getElementById('hanukkah-text').addEventListener('click', changeSpelling);
+}
+
 function getHanukkahDate(year) {
     // Hanukkah starts on the 25th day of Kislev in the Hebrew calendar
     // 2024: December 25, 2024 (evening)
@@ -58,6 +91,19 @@ function updateCountdown() {
     `;
 }
 
-// Update countdown immediately and then every second
-updateCountdown();
-setInterval(updateCountdown, 1000);
+// Initialize the page
+function initializePage() {
+    // Set up the initial clickable Hanukkah text
+    const title = document.querySelector('h1');
+    title.innerHTML = `🕎 <span id="hanukkah-text">${currentSpelling}</span> Countdown 🕎`;
+
+    // Add click listener to the Hanukkah text
+    document.getElementById('hanukkah-text').addEventListener('click', changeSpelling);
+
+    // Start the countdown
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+// Initialize everything when the page loads
+document.addEventListener('DOMContentLoaded', initializePage);
