@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.countdown {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hanukkah-message {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 20px #FFD700; }
+    to { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 30px #FFD700, 0 0 40px #FFD700; }
+}
+
+.time-unit {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-width: 120px;
+}
+
+.time-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.time-label {
+    display: block;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .countdown { font-size: 2.5rem; }
+    .hanukkah-message { font-size: 3rem; }
+    .time-unit { margin: 0 0.5rem; min-width: 80px; }
+    .time-number { font-size: 2rem; }
+}
