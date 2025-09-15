@@ -40,7 +40,8 @@ function getHanukkahDate(year) {
         2025: new Date('2025-12-14T18:00:00'),
         2026: new Date('2026-12-04T18:00:00'),
         2027: new Date('2027-12-24T18:00:00'),
-        2028: new Date('2028-12-12T18:00:00')
+        2028: new Date('2028-12-12T18:00:00'),
+        2029: new Date('2029-12-1T18:00:00')
     };
     return hanukkahDates[year];
 }
